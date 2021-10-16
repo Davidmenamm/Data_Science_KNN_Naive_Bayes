@@ -31,7 +31,7 @@ def MultipleKnn(trainTestPaths):
         X_train = train.iloc[:, 1: len(train.columns)-1]
         X_test = test.iloc[:, 1: len(test.columns)-1]
         # new dir if not created
-        calcPath = str(pPath)+'\calculations'
+        calcPath = str(pPath)+'\calculations_KNN'
         if not os.path.exists(calcPath):
             os.makedirs(calcPath)
         # Knn with multiple distances: 1 is manhattan and 2 is euclidian
@@ -62,7 +62,6 @@ def MultipleKnn(trainTestPaths):
                     classifPath = distancePath + f'\classif_k{k}.csv'
                     strPred = str(y_pred)
                     strReal = str(y_test.values)
-                    # print(type(distances[1].tolist()), distances[1].tolist())
                     distancePoints = []
                     for distPoint in zip(distances[1].tolist(), distances[0].tolist()):
                         distancePoints.append(

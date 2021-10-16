@@ -3,6 +3,7 @@
 # imports
 from Preprocessing import divideDataSets
 from Knn import MultipleKnn
+from NB import MultipleNB
 
 # input paths
 pathInHypothesis = r'data\input'
@@ -18,3 +19,5 @@ def coordinate():
     trainTestPaths = divideDataSets(pathInHypothesis, mainOutputPath)
     # knn for multiple k and distance, for multiple hypothesis
     MultipleKnn(trainTestPaths)
+    # apply naive bayes
+    MultipleNB(trainTestPaths)
